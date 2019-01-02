@@ -72,3 +72,5 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, last_seen=? WHERE user.id = ?'] [parameters: ('banana', '2018-12-29 20:48:50.870968', 1)] (Background on this error at: http://sqlalche.me/e/gkpj)
 2018-12-29 15:56:03,798 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:38]
+2019-01-02 15:04:40,449 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:38]
+2019-01-02 15:04:52,575 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:38]
