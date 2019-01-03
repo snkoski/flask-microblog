@@ -1,0 +1,80 @@
+2019-01-03 11:57:59,344 ERROR: Exception on /user/susan [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 71, in user
+    user = User.query.filter_by(username=username).first_or_404()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 425, in first_or_404
+    rv = self.first()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2687, in __getitem__
+    return list(res)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2994, in __iter__
+    self.session._autoflush()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1503, in _autoflush
+    util.raise_from_cause(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 249, in reraise
+    raise value
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1493, in _autoflush
+    self.flush()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2313, in flush
+    self._flush(objects)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2440, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 249, in reraise
+    raise value
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2404, in _flush
+    flush_context.execute()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 395, in execute
+    rec.execute(self)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 560, in execute
+    uow
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 774, in _emit_update_statements
+    execute(statement, multiparams)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely) (sqlite3.OperationalError) database is locked [SQL: 'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: ('2019-01-03 16:57:54.230281', 1)] (Background on this error at: http://sqlalche.me/e/e3q8)
