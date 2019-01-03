@@ -96,3 +96,12 @@ Traceback (most recent call last):
     next_url = url_for('user', username=user.username, page=post.next_num) if posts.has_next else None
 NameError: name 'post' is not defined
 2019-01-03 11:59:51,016 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:38]
+2019-01-03 13:03:11,117 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 13:09:18,425 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 13:16:49,245 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 13:18:37,519 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 13:24:15,820 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 13:38:41,768 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 15:10:02,372 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 15:14:06,909 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+2019-01-03 15:23:20,148 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
