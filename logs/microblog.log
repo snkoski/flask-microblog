@@ -56,3 +56,8 @@ jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
 2019-01-04 11:19:09,269 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
 2019-01-04 11:19:30,587 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
 2019-01-04 11:21:23,267 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
+2019-01-04 15:01:37,750 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
+2019-01-04 15:23:24,744 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
+2019-01-04 15:26:30,214 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
+2019-01-04 17:16:21,620 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
+2019-01-04 17:16:37,270 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
