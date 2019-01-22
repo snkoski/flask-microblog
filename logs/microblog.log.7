@@ -1,4 +1,4 @@
-2019-01-03 11:58:00,376 ERROR: Exception on /explore [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-03 11:57:59,344 ERROR: Exception on /user/susan [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
     context)
@@ -23,12 +23,14 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 127, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 491, in paginate
-    items = self.limit(per_page).offset((page - 1) * per_page).all()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2843, in all
-    return list(self)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 71, in user
+    user = User.query.filter_by(username=username).first_or_404()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 425, in first_or_404
+    rv = self.first()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2687, in __getitem__
+    return list(res)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2994, in __iter__
     self.session._autoflush()
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1503, in _autoflush
@@ -75,33 +77,4 @@ Traceback (most recent call last):
     context)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely) (sqlite3.OperationalError) database is locked [SQL: 'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: ('2019-01-03 16:57:55.244739', 1)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2019-01-03 11:58:21,057 ERROR: Exception on /user/susan [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 74, in user
-    next_url = url_for('user', username=user.username, page=post.next_num) if posts.has_next else None
-NameError: name 'post' is not defined
-2019-01-03 11:59:51,016 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:38]
-2019-01-03 13:03:11,117 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 13:09:18,425 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 13:16:49,245 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 13:18:37,519 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 13:24:15,820 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 13:38:41,768 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 15:10:02,372 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 15:14:06,909 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
-2019-01-03 15:23:20,148 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:40]
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely) (sqlite3.OperationalError) database is locked [SQL: 'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: ('2019-01-03 16:57:54.230281', 1)] (Background on this error at: http://sqlalche.me/e/e3q8)

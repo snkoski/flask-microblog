@@ -1,19 +1,30 @@
-2019-01-03 16:38:39,910 ERROR: Exception on /register [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-22 11:32:20,985 ERROR: Exception on /er [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 67, in register
-    return render_template('register.html', title='Register', form=form)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/errors/handlers.py", line 6, in not_found_error
+    return render_template('404.html'), 404
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -22,44 +33,40 @@ Traceback (most recent call last):
     return self._load_template(name, self.make_globals(globals))
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
     template = self.loader.load(self, name, globals)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/templates/register.html", line 39, in template
-    {% block app_content %}
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 82, in generate
-    generator.visit(node)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2019-01-03 16:39:44,819 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:39:50,052 ERROR: Exception on /register [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2019-01-22 11:32:21,407 ERROR: Exception on /er [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 67, in register
-    return render_template('register.html', title='Register', form=form)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/errors/handlers.py", line 6, in not_found_error
+    return render_template('404.html'), 404
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -68,26 +75,10 @@ Traceback (most recent call last):
     return self._load_template(name, self.make_globals(globals))
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
     template = self.loader.load(self, name, globals)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/templates/register.html", line 13, in template
-    <!-- {% block app_content %}
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 82, in generate
-    generator.visit(node)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2019-01-03 16:40:48,319 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:41:29,086 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
