@@ -41,3 +41,5 @@ Traceback (most recent call last):
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: 404.html
 2019-01-22 12:57:26,186 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:66]
+2019-01-22 16:07:50,261 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 16:40:49,894 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
