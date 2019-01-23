@@ -1,4 +1,4 @@
-2019-01-22 18:00:35,667 ERROR: Exception on /user/banana/popup [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-22 18:00:37,936 ERROR: Exception on /user/banana/popup [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,3 +53,47 @@ Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2019-01-22 18:04:45,809 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 18:47:13,013 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 18:49:11,760 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 19:11:57,208 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 19:15:36,341 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 19:16:32,511 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 20:04:24,147 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 20:04:34,494 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 21:43:52,522 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 21:44:16,138 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 21:44:34,984 ERROR: Exception on /send_message/banana [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-01-22 21:55:07,689 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 22:42:52,616 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 22:49:32,328 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 22:49:43,142 ERROR: Exception on /messages [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/main/routes.py", line 142, in messages
+    current_user.last_message_read_time = daetime.utcnow()
+NameError: name 'daetime' is not defined
+2019-01-22 22:54:01,403 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
