@@ -1,13 +1,51 @@
-2019-01-03 11:57:59,344 ERROR: Exception on /user/susan [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-22 11:32:25,361 ERROR: Exception on /favicon.ico [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: database is locked
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
 
-The above exception was the direct cause of the following exception:
+During handling of the above exception, another exception occurred:
 
+Traceback (most recent call last):
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/errors/handlers.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2019-01-22 12:57:26,186 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:66]
+2019-01-22 16:07:50,261 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 16:40:49,894 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 16:47:37,632 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 17:48:54,590 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+2019-01-22 17:48:57,509 ERROR: Exception on /user/susan/popup [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,58 +61,42 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 71, in user
-    user = User.query.filter_by(username=username).first_or_404()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 425, in first_or_404
-    rv = self.first()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2895, in first
-    ret = list(self[0:1])
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2687, in __getitem__
-    return list(res)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2994, in __iter__
-    self.session._autoflush()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1503, in _autoflush
-    util.raise_from_cause(e)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 249, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1493, in _autoflush
-    self.flush()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2313, in flush
-    self._flush(objects)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2440, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 249, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2404, in _flush
-    flush_context.execute()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 395, in execute
-    rec.execute(self)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 560, in execute
-    uow
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
-    mapper, table, update)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 774, in _emit_update_statements
-    execute(statement, multiparams)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
-    context)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
+  File "/Users/flatironschool/Development/code/flask/microblog/app/main/routes.py", line 124, in user_popup
+    return render_template('user_popup.html', user=user)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely) (sqlite3.OperationalError) database is locked [SQL: 'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: ('2019-01-03 16:57:54.230281', 1)] (Background on this error at: http://sqlalche.me/e/e3q8)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/templates/user_popup.html", line 23, in template
+    {% endif %}
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.

@@ -1,4 +1,4 @@
-2019-01-03 16:41:41,501 ERROR: Exception on /register [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-22 17:56:26,271 ERROR: Exception on /user/banana/popup [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/routes.py", line 67, in register
-    return render_template('register.html', title='Register', form=form)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/flatironschool/Development/code/flask/microblog/app/main/routes.py", line 124, in user_popup
+    return render_template('user_popup.html', user=user)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -30,47 +32,24 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/templates/register.html", line 16, in template
-    <!-- {% block app_content %}
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 82, in generate
-    generator.visit(node)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2019-01-03 16:42:02,376 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:45:39,544 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:47:42,302 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:50:06,917 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:51:09,099 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:53:04,636 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 16:54:30,276 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-03 18:04:07,605 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:42]
-2019-01-04 11:06:32,765 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
-2019-01-04 11:18:45,384 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
-2019-01-04 11:19:09,269 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
-2019-01-04 11:19:30,587 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
-2019-01-04 11:21:23,267 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:44]
-2019-01-04 15:01:37,750 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 15:23:24,744 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 15:26:30,214 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 17:16:21,620 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 17:16:37,270 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 20:43:50,118 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-04 20:43:59,930 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 15:17:14,955 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 15:17:50,200 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:00:09,162 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:02:38,137 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:06:55,882 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:08:45,261 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:12:25,157 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:28:18,179 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-06 16:32:58,925 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-09 22:01:12,585 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:47]
-2019-01-22 11:31:45,894 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:49]
+  File "/Users/flatironschool/Development/code/flask/microblog/app/templates/user_popup.html", line 23, in template
+    {% endif %}
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
