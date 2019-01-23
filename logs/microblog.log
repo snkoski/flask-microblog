@@ -1,31 +1,29 @@
-2019-01-22 22:54:09,738 ERROR: Exception on /messages [GET] [in /Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-23 16:27:34,392 INFO: Microblog startup [in ./app/__init__.py:74]
+2019-01-23 16:27:44,577 ERROR: Unhandled exception [in ./app/tasks.py:52]
 Traceback (most recent call last):
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/flatironschool/Development/code/flask/microblog/app/main/routes.py", line 142, in messages
-    current_user.last_message_read_time = daetime.utcnow()
-NameError: name 'daetime' is not defined
-2019-01-22 22:55:26,484 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 09:36:06,081 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 09:49:19,941 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 09:55:10,887 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:15:40,892 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:15:48,767 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:33:53,679 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:34:27,466 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:35:03,087 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:36:07,283 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:36:49,660 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
-2019-01-23 10:38:16,078 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:70]
+  File "./app/tasks.py", line 49, in export_posts
+    send_email('[Microblog] Your blog posts', sender=app.config['ADMINS'][0], recipients=[user.email], text_body=render_template('email/export_posts.txt', user=user), html_body=render_template('email/export_posts.html', user=user), attachments=[('posts.json', 'application/json', json.dumps({'posts': data}, indent=4))], sync=True)
+  File "./app/email.py", line 14, in send_email
+    mail.send(msg)
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/flatironschool/Development/code/flask/microblog/venv/lib/python3.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 727, in create_connection
+    raise err
+  File "/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+2019-01-23 17:09:37,948 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:74]
+2019-01-23 17:13:36,038 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:74]
+2019-01-23 17:15:04,284 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:74]
+2019-01-23 17:15:34,145 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:74]
+2019-01-23 17:16:04,605 INFO: Microblog startup [in /Users/flatironschool/Development/code/flask/microblog/app/__init__.py:74]
